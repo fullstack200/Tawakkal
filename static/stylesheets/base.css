@@ -330,6 +330,10 @@ body {
         display: none;
     }
 
+      .overlay a {
+        font-size: 2rem;
+    }
+
     .footer {
         justify-content: space-between;
         padding: 60px 20px 20px 30px;
