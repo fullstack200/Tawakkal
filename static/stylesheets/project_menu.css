@@ -1,0 +1,114 @@
+.previous {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+.box img {
+    border-radius: 15px 50px;
+    border: 10px solid black;
+}
+
+.box{
+    position: relative;
+    margin:40px;
+}
+
+@keyframes sample {
+    from {
+        height: 70px
+    }
+
+    to {
+        height: 120px
+    }
+}
+
+@keyframes sample2 {
+    from {
+        height: 120px
+    }
+
+    to {
+        heigh: 70px
+    }
+}
+
+.description:hover {
+    animation-name: sample;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.description {
+    position: absolute;
+    padding: 10px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    text-align: left;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+    border-radius: 5px;
+    animation-name: sample2;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .box img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .description{
+        width: 270px;
+        top: 250px;
+        height: 70px;
+        left: 15px;
+    }
+
+    .project-address{
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .box img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .description{
+        width: 240px;
+        top: 200px;
+        height: 65px;
+        left:5px;
+    }
+
+    .project-address{
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .description{
+        animation-name: none;
+        height: 120px;
+    }
+
+    .box img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .description span{
+        font-size: 0.9rem;
+    }
+
+}

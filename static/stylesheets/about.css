@@ -1,0 +1,161 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container {
+    padding: 0 30px;
+}
+
+.who-we-are p {
+    text-align: justify;
+    margin: 70px 0 30px;
+}
+
+.flex {
+    display: flex;
+    margin: 150px 0 50px;
+
+}
+
+.icon-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-head h4 {
+    font-weight: 600;
+}
+
+.values {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    text-align: center;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.values i {
+    transform: rotate(-45deg);
+}
+
+.founders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.founders div{
+    display: flex;
+    margin:30px 0 50px;
+    width:100%;
+    text-align: center;
+}
+
+.founders div h3{
+    font-weight: 600;
+}
+
+.names{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .values {
+        height: 150px;
+        width: 150px;
+        margin: 0 80px;
+        font-size: 2.5rem;
+    }
+
+    .icon-head h4 {
+        margin: 80px 0;
+    }
+
+    .founders div{
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    .flex{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .values {
+        height: 150px;
+        width: 150px;
+        margin: 0 80px;
+        font-size: 2.5rem;
+    }
+
+    .icon-head {
+        margin: 50px 0;
+    }
+
+    .icon-head h4 {
+        font-size: 1.5rem;
+        margin: 80px 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .flex {
+        flex-direction: column;
+        margin: 70px 0;
+    }
+
+    .who-we-are p{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    .values {
+        height: 130px;
+        width: 130px;
+        margin: 0 80px;
+        font-size: 2.4rem;
+    }
+
+    .icon-head {
+        margin: 50px 0;
+    }
+
+    .icon-head h4 {
+        font-size: 1.5rem;
+        margin: 80px 0 20px;
+    }
+
+    .founders div{
+        flex-direction: column;
+        margin-top:10px;
+    }
+
+    .names h3{
+        font-size: 1.5rem;
+    }
+
+    .names h6{
+        font-size: 0.9rem;
+    }
+
+}

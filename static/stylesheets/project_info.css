@@ -1,0 +1,370 @@
+.images-section {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+overflow: hidden;
+}
+
+#one {
+    margin-left: 0 !important;
+}
+
+#two {
+    margin-left: 5px;
+}
+
+#three {
+    margin-right: 0 !important;
+    margin-left: 5px;
+}
+
+.header {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    color: white;
+    display: flex;
+    width: 90%;
+    margin: -50px auto 0;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.short-info{
+    width: 100%;
+}
+
+.short-info h2 {
+    font-weight: 600;
+}
+
+.button-coll {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button-coll a {
+    color: white;
+    border: 2px solid white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.body {
+    padding: 50px;
+}
+
+td,
+th {
+    border: 1px solid #a49d9d;
+    text-align: left;
+    padding: 8px;
+    font-size: 15px;
+}
+
+.about {
+    margin-top: 40px;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.amenities {
+    margin-top: 40px;
+    padding: 0%;
+}
+
+.amenities ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.amenities ul li {
+    margin: 30px;
+}
+
+.plans {
+    margin-top: 40px;
+}
+
+.plan-img {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plan-img img {
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plan-img img:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+#image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+#image-viewer .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#image-viewer .close:hover,
+#image-viewer .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.specifications {
+    margin-top: 40px;
+}
+
+.specifications ol li {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.specifications ul li {
+    border-bottom: none;
+}
+
+.small-icons {
+    height: 40px;
+    width: 40px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .images-section img {
+        height: 421px;
+        width: 421px;
+    }
+
+    .header {
+        align-items: center;
+    }
+
+    .hlogo {
+        margin-left: 100px;
+    }
+
+    .hlogo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .short-info {
+        margin-left: 20px;
+    }
+
+
+    .button-coll a{
+        margin:0 5px;
+    }
+
+
+    .name,
+    .address {
+        margin-left: 10px;
+        line-height: 15px;
+    }
+
+    table {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    .images-section img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    .hlogo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .short-info {
+        margin-left: 20px;
+    }
+
+    .short-info h2 {
+        font-size: 1.7rem;
+    }
+
+    .button-coll {
+        width: 60%;
+        margin-left: 10px;
+    }
+
+    .button-coll a{
+        margin:0 5px;
+    }
+
+
+    .name,
+    .address {
+        margin-left: 10px;
+        line-height: 15px;
+    }
+
+    table {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .images-section img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    .hlogo img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .header {
+        margin-top: -15px;
+    }
+
+    .short-info {
+        margin-left: 20px;
+    }
+
+    .short-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .button-coll {
+        width: 100%;
+        font-size: 0.7rem;
+        margin-left: 5px;
+    }
+
+    
+    .button-coll a{
+        margin:0 5px;
+    }
+
+    .name,
+    .address {
+        margin-left: 10px;
+        line-height: 15px;
+    }
+
+    .name p, .address p{
+        font-size: 0.9rem;
+    }
+
+    td,th{
+        font-size: 0.9rem;
+    }
+
+    .body {
+        padding: 20px;
+    }
+
+    .highlights {
+        margin-top: 50px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .about h4{
+        text-align: left;
+    }
+
+    .about p{
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    .plan-img p{
+        font-size: 0.9rem;
+    }
+
+    .small-icons{
+        height:20px;
+        width:20px;
+    }
+
+    ol li{
+        font-size:1rem ;
+    }
+
+    ol{
+        padding-left: 20px;
+    }
+
+    .collapse{
+        font-size: 0.9rem !important;
+    }
+
+    .collapsing{
+        font-size: 0.9rem !important;
+    }
+}

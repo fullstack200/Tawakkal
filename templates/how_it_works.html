@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/how_it_works.css' %}">
+
+    <!-- JS Link-->
+    <script src="{% static './static/JS/reveal.js' %}"></script>
+
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+
+    <div class="heading">
+        <h3>How it Works</h3>
+    </div>
+
+    <div class="process">
+        <div class="steps reveal">
+            <div>
+                <img src="{% static './static/media/meeting.png' %}" alt="">
+            </div>
+            <h2>Meeting with client</h2>
+            <p>Upon completing thorough due diligence, our esteemed client has chosen to entrust their project to our
+                company. With clear communication of their requirements, we embark on a journey of collaboration, where
+                expertise meets vision to bring their aspirations to fruition.</p>
+        </div>
+        <i class="fa-solid fa-down-long arrow reveal" style="color: #eac117;"></i>
+        <div class="steps reveal">
+            <div><img src="{% static './static/media/business-proposal.png' %}" alt=""></div>
+
+            <h2>Proposal</h2>
+            <p>Responding to our client's needs with precision and dedication, our company meticulously crafts a
+                proposal
+                tailored to their exact specifications. Within its pages lies a comprehensive exploration of our
+                services,
+                offering in-depth insights and a roadmap for how we intend to bring their vision to life. With clarity
+                and
+                expertise, we illuminate the path forward, ensuring every aspect of their project is met with the utmost
+                care and attention.</p>
+        </div>
+        <i class="fa-solid fa-down-long arrow reveal" style="color: #eac117;"></i>
+        <div class="steps reveal">
+            <div><img src="{% static './static/media/acceptance.png' %}" alt=""></div>
+            <h2>Accepting proposal</h2>
+            <p>After careful consideration and thorough review of our proposal, the client has made the decision to
+                accept
+                our offer. It's a testament to the alignment of our vision and the trust they've placed in our
+                capabilities.
+                With excitement and commitment, we look forward to forging ahead, turning their dreams into reality and
+                exceeding their expectations every step of the way.</p>
+
+        </div>
+        <i class="fa-solid fa-down-long arrow reveal" style="color: #eac117;"></i>
+        <div class="steps reveal">
+            <div> <img src="{% static './static/media/negotiation.png' %}" alt=""></div>
+            <h2>Negotiations</h2>
+            <p>Following the acceptance of our proposal, we extend a sincere invitation to our client to discuss any
+                conditions, concerns, or queries they may have regarding our services. This open dialogue ensures that
+                we
+                address any uncertainties and align with their expectations fully. We prioritize transparency and client
+                satisfaction, valuing their input and fostering a collaborative partnership built on trust and mutual
+                understanding.</p>
+        </div>
+        <i class="fa-solid fa-down-long arrow reveal" style="color: #eac117;"></i>
+        <div class="steps reveal">
+            <div><img id="draft" src="{% static './static/media/draft.png' %}" alt=""></div>
+            <h2>Drafting of Agreement</h2>
+            <p>With all aspects of negotiation carefully considered and discussed, we have proceeded to draft a
+                comprehensive agreement that encapsulates our mutual understanding and commitments. Signed and agreed
+                upon
+                by both parties, this document serves as a formal expression of our shared vision and the terms by which
+                we
+                will work together. It signifies the beginning of a fruitful collaboration, underpinned by clarity,
+                trust,
+                and a shared commitment to success.</p>
+
+        </div>
+        <i class="fa-solid fa-down-long arrow reveal" style="color: #eac117;"></i>
+        <div class="steps reveal">
+            <div><img src="{% static './static/media/init_service.png' %}" alt=""></div>
+            <h2>Initiation of services</h2>
+            <p>With the necessary approvals obtained from relevant authorities and plans sanctioned, our services are
+                poised
+                to commence as scheduled. We are fully committed to delivering on our promises within the stipulated
+                timeframe, ensuring efficiency and professionalism throughout the process. From initiation to
+                completion, we
+                remain dedicated to meeting deadlines and exceeding expectations, guaranteeing a seamless and successful
+                outcome for all involved.</p>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}
+
+</html>

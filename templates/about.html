@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/about.css' %}">
+
+    <!-- JS Link-->
+    <script src="{% static './static/JS/reveal.js' %}"></script>
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="heading">
+        <h3>About Us</h3>
+    </div>
+    <div class="about-container">
+        <div class="who-we-are reveal">
+            <div class="header__center">
+                <h1>Who Are We</h1>
+            </div>
+            <p><i style="color:#eca117">Mohammed Jaffer Sheriff</i> is the driving force and inspiration behind Tawakkal
+                Ventures. To him it's all
+                about providing unique Design Detailing in to Construction practice that exceed the expectations of his
+                customers at the same time keeping up with the international trends within all three business verticals.
+                 All his works are done with passion, purpose, sensitivity and humility, thus strive to create unique,
+                inspirational, and path breaking structures and landmarks that stand the test of time. Tawakkal
+                Ventures is a construction company focused on residential and commercial properties which also provides
+                all types of civil and allied services. We are present in 20+ locations in Bangalore and are on track to
+                expand more, one of our latest projects boasts on building institutions and commercial complexs at prime
+                locations. <br><br>Tawakkal group of companies was founded in the year 1983 by <i
+                    style="color:#eca117">Late Mr. Abdul Subhan</i>, an
+                entrepreneur and a philanthropist who started off as an industrialist and slowly gave the business a
+                shape of a company. Over the last few decades Tawakkal ventures a branch of Tawakkal group made its name
+                in Bangalore for rendering service in an impeccable manner which has always left its clients with what
+                they wanted. Tawakkal Ventures is led by its founding partner Mohammed Jaffer Sheriff who has
+                diverse knowledge in the field of building and construction, whose mission is to provide homes that make
+                our clients have a convenient lifestyle. Tawakkal Ventures has its own team who are experts in the field
+                of construction / development and provides its products / services after it goes through niche research and
+                due diligence carried out by professionals.
+            </p>
+        </div>
+
+        <div class="core-values reveal">
+            <div class="header__center">
+                <h1>Our Values</h1>
+            </div>
+            <div class="flex">
+                <div class="icon-head reveal">
+                    <div id="first-value" class="values">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Transparency</h4>
+                </div>
+                <div class="icon-head reveal">
+                    <div class="values">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4>Housing Standards</h4>
+                </div>
+                <div class="icon-head reveal">
+                    <div class="values">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h4>Time Bound</h4>
+                </div>
+                <div class="icon-head reveal">
+                    <div class="values">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h4>Compliance with Law</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="founders reveal">
+            <div class="header__center">
+                <h1>Our Founders </h1>
+            </div>
+            <div>
+                <div class="names">
+                    <h3>Mr. Abdul Subhan</h3>
+                    <h6>Founder of Tawakkal Group.</h6>
+                </div>
+                <div class="names">
+                    <h3>Mr. Mohammed Jaffer Sheriff</h3>
+                    <h6>Partner and Co-Founder.<br>Representative of Tawakkal Ventures.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
+
+</html>

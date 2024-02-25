@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/contact.css' %}">
+
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="heading">
+        <h3>Contact Us</h3>
+    </div>
+    <div class="main-content">
+        <div id="address">
+            <i class="fa-solid fa-location-dot" style="color: #eac117;"></i>
+            <h3><b>Where to find us</b></h3>
+            <p>Tawakkal Rahim
+                6, Ahmed Sait Road, Pulikeshi Nagar, Bengaluru, Karnataka 560005
+            </p>
+        </div><br>
+        <div id="phone">
+            <i class="fa-solid fa-phone" style="color: #eac117;"></i>
+            <h3><b>Call Us</b></h3>
+            <p>+91-987654321</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-envelope" style="color: #eac117;"></i>
+            <h3><b>Write to Us</b></h3>
+            <p>tawakkalvenures@gmail.com</p>
+        </div>
+    </div>
+    <div class="main-content-2">
+        <div class="form-part">
+            <h3 style="text-align:center">Send Your Details</h3><br>
+            <div class="fcontainer">
+                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" name="projectName" placeholder="Project Name">
+                    <label for="custName">Name</label>
+                    <input type="text" id="custName" name="custName" placeholder="Your Full Name">
+                    <label for="custPhone">Phone No.</label>
+                    <input type="text" id="custPhone" name="custPhone" placeholder="Your Phone Number">
+                    <label for="custEmail">Email-ID</label>
+                    <input type="text" id="custEmail" name="custEmail" placeholder="Your Email-ID">
+                    <label for="subject">Message</label>
+                    <textarea id="custMessage" name="custMessage" placeholder="Write your meassage"
+                        style="height:200px"></textarea>
+                    <div style="text-align:center">
+                        <button type="submit" class="button"><span>Submit</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="map-locator">
+            <h3>Locate us on map here</h3><br>
+            <div id="googleMap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.585986491021!2d77.61187681482227!3d12.998311290838359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16f133084327%3A0xe57f833cebed35c7!2sTawakkal%20Rahim%2C%206%2C%20Ahmed%20Sait%20Rd%2C%20Pulikeshi%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560005!5e0!3m2!1sen!2sin!4v1668958622948!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="nothin"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
+
+</html>

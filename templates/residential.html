@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/project_menu.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="heading">
+        <h3>Residential Projects</h3>
+    </div>
+    <div class="previous">
+        {% for x in rproperties reversed %}
+        <a href="{% url 'property' x.id %}">
+            <div class="box">
+                <img src="https://tawakkalventures.s3.amazonaws.com/{{ x.propertyImage1 }}" alt="">
+                <div class="description">
+                    <p><b>{{ x.projectName }}</b><br>
+                        <span class="project-address">{{ x.address }}</span><br><br>
+                        <span><i class="fas fa-bed"></i>&nbsp;&nbsp;{{ x.bedrooms }}</i></span>
+                    </p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+{% endblock content %}
+
+</html>

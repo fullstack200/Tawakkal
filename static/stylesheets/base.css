@@ -1,0 +1,458 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Montserrat;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.nav-bar {
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+
+.links a {
+    text-decoration: none;
+    position: relative;
+    background: -webkit-linear-gradient(#eee, #EAC117);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.links a::before,
+.quick-menu>ul>li>a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(#eee, #EAC117);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: transparent;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.links a:hover::before,
+.quick-menu>ul>li>a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.menu-bar {
+    cursor: pointer;
+    background: -webkit-linear-gradient(#eee, #EAC117);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 15%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay-content a:hover,
+.overlay-content a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #EAC117;
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    display: flex;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.icon {
+    color: white;
+    margin-bottom: 0;
+    font-weight: 800;
+}
+
+.info {
+    background: -webkit-linear-gradient(#eee, #EAC117);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quick-menu p {
+    font-weight: 800;
+    color: white;
+}
+
+.quick-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.quick-menu>ul>li>a {
+    text-decoration: none;
+    position: relative;
+    background: -webkit-linear-gradient(#eee, #EAC117);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.copy-rights {
+    width: 100%;
+    background-color: black;
+    border-top: 1px solid white;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.copy-rights p {
+    margin: 0;
+}
+
+.heading {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    color: white;
+}
+
+.heading h3 {
+    font-weight: 800;
+}
+
+.header__center {
+    display: grid !important;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.header__center::before,
+.header__center::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: black;
+}
+
+.header__center h1{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    color: white;
+    font-weight: 800;
+    padding: 10px;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .heading {
+        padding: 90px;
+    }
+
+    .heading h3 {
+        font-size: 3rem;
+    }
+
+    .header__center h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .nav-bar img {
+        height: 40px;
+        width: 150px;
+    }
+
+    .sub-nav-bar {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        justify-content: right;
+    }
+
+    .links {
+        width: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 1rem;
+        margin-right: 30px;
+    }
+
+    .menu-bar {
+        font-size: 1.5rem;
+    }
+
+    .overlay a {
+        font-size: 2rem;
+    }
+
+    .footer {
+        padding: 130px 50px 130px 80px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .contact-links div {
+        margin: 10px 0;
+    }
+
+    .quick-menu p {
+        font-size: 1.2rem;
+    }
+
+    .quick-menu ul li {
+        margin: 8px 0;
+    }
+
+    .logo img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    .copy-rights {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    .heading {
+        padding: 70px;
+    }
+
+    .heading h3 {
+        font-size: 2.5rem;
+    }
+
+    .header__center h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-bar {
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-bar img {
+        width: 130px;
+        height: 40px;
+    }
+
+    .menu-bar {
+        font-size: 1.5rem;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .footer {
+        justify-content: space-between;
+        padding: 60px 20px 20px 30px;
+    }
+
+    .icon {
+        font-size: 1rem;
+    }
+
+    .info {
+        font-size: 0.8rem;
+    }
+
+    .quick-menu {
+        margin-bottom: 20px;
+    }
+
+    .quick-menu p {
+        font-size: 1rem;
+    }
+
+    .quick-menu ul li {
+        font-size: 0.8rem;
+        margin: 7px 0;
+    }
+
+    .contact-links {
+        margin-bottom: 60px;
+    }
+
+    .logo img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .copy-rights p {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .heading {
+        padding: 60px 30px;
+    }
+
+    .heading h3 {
+        font-size: 1.5rem;
+    }
+
+    .header__center h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-bar {
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-bar img {
+        width: 110px !important;
+        height: 30px !important;
+    }
+
+    .menu-bar {
+        font-size: 1.1rem !important;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .overlay a{
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 20px 20px 30px;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .info {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .quick-menu {
+        margin-bottom: 20px;
+    }
+
+    .quick-menu p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .quick-menu ul li {
+        font-size: 0.9rem;
+        margin: 7px 0;
+        text-align: center;
+    }
+
+    .contact-links {
+        margin-bottom: 60px;
+    }
+
+    .logo img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .copy-rights p {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/project_info.css' %}">
+    <!-- JS Link-->
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="images-section">
+        <div class="column"><img id="one" style="margin:0" src="{{ property.propertyImage1.url }}" alt=""></div>
+        <div class="column"> <img id="two" src="{{ property.propertyImage2.url }}" alt=""></div>
+        <div class="column"><img id="three" src="{{ property.propertyImage3.url }}" alt=""></div>
+    </div>
+
+    <div class="header">
+        <div class="hlogo">
+            <img src="{% static './static/media/Tawakkal.png' %}" alt="">
+        </div>
+        <div class="short-info">
+            <div class="name">
+                <b>
+                    <h2>{{ property.projectName }}</h2>
+                </b>
+            </div>
+            <div class="address">
+                <p>{{ property.address }}</p>
+            </div>
+
+            <div class="button-coll">
+                <a class="direction-link" href="{{ property.directions }}">
+                    <div class="directions"><i class="fas fa-map-pin"></i> Get Directions</div>
+                </a>
+                <a href="{% url 'contact' %}" style="text-decoration:None; color:white">
+                    <div class="enquire-button"><i class="fa-solid fa-circle-info"></i> Enquire</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="body">
+        <div class="mid-content">
+            <div class="highlights">
+                <h4><b>Project Highlights</b></h4>
+                <table>
+                    <tr>
+                        <td><b>Development Size</b></td>
+                        <td>{{ property.developmentSize }} sqft</td>
+                    </tr>
+                    <tr>
+                        <td><b>Number of Units</b></td>
+                        <td>{{ property.noOfUnits }} units</td>
+                    </tr>
+                    <tr>
+                        <td><b>Bedrooms</b></td>
+                        <td>{{ property.bedrooms }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="about">
+                <h4><b>About {{ property.projectName }}</b></h4>
+                <p>{{ property.about }}</p>
+            </div>
+            <div class="plans">
+                <h4><b>Master / Unit Plans</b></h4><br>
+                <div class="plan-img">
+                    {% if property.unitPlan1 == "" %}
+                    <p>Plans not available.</p>
+                    {% else %}
+                    <img src="{{ property.unitPlan1.url }}" alt="">
+                    <img src="{{ property.unitPlan2.url }}" alt="">
+                    {% endif %}
+                </div>
+            </div>
+            <div id="image-viewer">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="full-image" alt="no">
+            </div>
+            <div class="specifications">
+                <h4><b>Specifications</b></h4><br>
+                <ol>
+                    <div>
+                        <li data-toggle="collapse" class="single-spec" data-target="#demo1">&nbsp;<img
+                                class="small-icons" src="{% static './static/media/structure.png' %}" alt=""> &nbsp;Structure</li>
+                    </div>
+                    <div id="demo1" class="collapse">
+                        {% for x in property.s1 %}
+                        {{x}}<br>
+                        {% endfor %}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo2">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/lobby.png' %}" alt="">
+                        &nbsp;Lobby</li>
+                    <div id="demo2" class="collapse">
+                        {% for x in property.s2%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" onclick="bgchange()" data-target="#demo3">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/lift.png' %}" alt=""> &nbsp;Lifts</li>
+                    <div id="demo3" class="collapse">
+                        {% for x in property.s3%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo4">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/floor.png' %}" alt="">
+                        &nbsp;Apartment Flooring</li>
+                    <div id="demo4" class="collapse">
+                        {% for x in property.s4%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo5">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/kitchen.png' %}" alt="">
+                        &nbsp;Kitchen</li>
+                    <div id="demo5" class="collapse">
+                        {% for x in property.s5%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo6">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/utility.png' %}" alt="">
+                        &nbsp;Utility</li>
+                    <div id="demo6" class="collapse">
+                        {% for x in property.s6%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo7">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/toilet.png' %}" alt="">
+                        &nbsp;Toilets & Fittings</li>
+                    <div id="demo7" class="collapse">
+                        {% for x in property.s7%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo8">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/painting.png' %}" alt="">
+                        &nbsp;Painting</li>
+                    <div id="demo8" class="collapse">
+                        {% for x in property.s8%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo9">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/doorNwindow.png' %}" alt="">
+                        &nbsp;Doors & Windows</li>
+                    <div id="demo9" class="collapse">
+                        {% for x in property.s9%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo10">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/electricity.png' %}" alt=""> &nbsp;Electrical</li>
+                    <div id="demo10" class="collapse">
+                        {% for x in property.s10%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo11">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/security-camera.png' %}" alt=""> &nbsp;Security System</li>
+                    <div id="demo11" class="collapse">
+                        {% for x in property.s11%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                    <li data-toggle="collapse" data-target="#demo12">&nbsp;<img class="small-icons"
+                            src="{% static './static/media/dgbackup.png' %}" alt=""> &nbsp;DG Backup</li>
+                    <div id="demo12" class="collapse">
+                        {% for x in property.s12%}
+                        {{x}}<br>
+                        {% endfor%}
+                    </div>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(".plan-img img").click(function () {
+        $("#full-image").attr("src", $(this).attr("src"));
+        $('#image-viewer').show();
+    });
+
+    $("#image-viewer .close").click(function () {
+        $('#image-viewer').hide();
+    });
+</script>
+{% endblock content %}
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="{% static './static/stylesheets/scope.css' %}">
+
+    <!-- JS Link-->
+    <script src="{% static './static/JS/reveal.js' %}"></script>
+
+    {% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="heading">
+        <h3>Scope of Work</h3>
+    </div>
+
+    <div class="div-container">
+        <div id="res" class="reveal">
+            <div class="images">
+                <img src="{% static './static/media/residential-apartments.jpg' %}" alt="">
+            </div>
+            <div class="sinfo">
+                <h3>Residential Apartment</h3>
+                <p>Discover modern living in our residential apartments. Each unit offers contemporary design, spacious layouts, and convenient amenities. Enjoy the comfort of home with features like gourmet kitchens, elegant bathrooms, and ample storage space. Our community boasts amenities such as a fitness center, swimming pool, and outdoor recreation areas, perfect for relaxing and socializing. Experience the convenience of urban living with nearby shopping, dining, and entertainment options. Welcome home to luxury and convenience in our residential apartments.</p>
+            </div>
+        </div>
+        <div id="ind" class="reveal">
+            <div class="images">
+                <img src="{% static './static/media/independent_houses.png' %}" alt="">
+            </div>
+            <div class="sinfo" >
+                <h3>Independent Houses</h3>
+                <p>Experience the charm and freedom of independent living in our houses. Nestled in serene neighborhoods, each house offers privacy, spacious interiors, and a personal touch. Enjoy the luxury of your own yard, perfect for gardening or outdoor gatherings. Our houses feature modern amenities, including gourmet kitchens, cozy living spaces, and comfortable bedrooms. With no shared walls, you'll have peace and quiet to create your ideal home environment. Embrace the sense of community while still enjoying your independence. Welcome to your own slice of paradise in our independent houses.</p>
+            </div>
+        </div>
+        <div id="com" class="reveal">
+            <div class="images">
+                <img src="{% static './static/media/commercial.jpg' %}" alt="">
+            </div>
+            <div class="sinfo">
+                <h3>Commercial Spaces</h3>
+                <p>Elevate your business with our premium commercial spaces. Designed with functionality and aesthetics in mind, our spaces offer the perfect environment for your business to thrive. From sleek office suites to versatile retail spaces, we provide tailored solutions to meet your specific needs. With flexible floor plans, modern amenities, and prime locations, our commercial spaces are designed to enhance productivity, attract customers, and leave a lasting impression. Whether you're launching a new venture or expanding your existing business, our expert team is here to help you find the perfect space to achieve your goals. Unlock the potential of your business with our premium commercial spaces.</p>
+            </div>
+        </div>
+        <div id="row" class="reveal">
+            <div class="images">
+                <img src="{% static './static/media/row-housing.jpg' %}" alt="">
+            </div>
+            <div class="sinfo">
+                <h3>Row Housing</h3>
+                <p>Discover the perfect balance of community and individuality in our row housing units. Set in a picturesque neighborhood, our row houses offer the charm of traditional architecture with modern comforts. Each unit features its own unique facade, giving you the feeling of a standalone home while still enjoying the benefits of shared amenities and a close-knit community. With spacious interiors, flexible floor plans, and private outdoor spaces, you'll find the ideal blend of privacy and camaraderie. Experience the best of both worlds in our row housing community, where neighbors become friends and every day feels like coming home.</p>
+            </div>
+        </div>
+        <div id="int" class="reveal"> 
+            <div class="images">
+                <img src="{% static './static/media/interior.jpg' %}" alt="">
+            </div>
+            <div class="sinfo">
+                <h3>Interior Designing</h3>
+                <p>Transform your living space into a sanctuary of style and comfort with our interior design services. Our team of experts will work closely with you to understand your vision, preferences, and lifestyle, crafting personalized designs that reflect your unique personality and taste. From concept to completion, we'll guide you through every step of the process, ensuring that every detail is thoughtfully curated and executed to perfection. Whether you're looking to refresh a single room or redesign your entire home, we'll bring creativity, expertise, and attention to detail to every project. Elevate your living experience with our interior design services and create a home that inspires and delights.</p>
+            </div>
+        </div>
+        <div id="cus" class="reveal">
+            <div class="images">
+                <img src="{% static './static/media/customized_homes.jpg' %}" alt="">
+            </div>
+            <div class="sinfo">
+                <h3>Customized Homes</h3>
+                <p>Experience the ultimate in personalized living with our customized homes. From concept to creation, we collaborate closely with you to bring your dream home to life. Whether you envision a sleek modern design, a cozy rustic retreat, or something entirely unique, our team of architects and builders will work tirelessly to turn your vision into reality. Every detail is tailored to your preferences, from the layout and floor plan to the finishes and fixtures. With a focus on quality craftsmanship and attention to detail, we ensure that your customized home is not just a house, but a reflection of your lifestyle and personality. Make your dream home a reality with our customized home-building services.</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+{% endblock content %}
+
+</html>
