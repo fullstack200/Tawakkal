@@ -137,6 +137,18 @@ input[type=submit] {
     font-size: 3rem;
   }
 
+    #loc-icon{
+    height:60px;
+    width:60px;
+    margin-bottom: 10px;
+  }
+
+  .icon-img{
+    height:50px;
+    width:50px;
+    margin-bottom: 10px;
+  }
+
   .main-content-2 {
     padding: 50px;
   }
@@ -179,6 +191,19 @@ input[type=submit] {
   .main-content i {
     font-size: 2.5rem;
   }
+
+    #loc-icon{
+    height:60px;
+    width:60px;
+    margin-bottom: 10px;
+  }
+
+  .icon-img{
+    height:50px;
+    width:50px;
+    margin-bottom: 10px;
+  }
+
 
   .main-content-2 {
     padding: 30px;
@@ -239,6 +264,18 @@ input[type=submit] {
 
   .main-content p {
     font-size: 0.9rem;
+  }
+
+  #loc-icon{
+    height:50px;
+    width:50px;
+    margin-bottom: 20px;
+  }
+
+  .icon-img{
+    height:40px;
+    width:40px;
+    margin-bottom: 20px;
   }
 
   .main-content-2 {
