@@ -2,23 +2,26 @@ let scriptExecuted = false;
 
 // Function to handle scroll event
 function handleScroll() {
-    const target = document.querySelector('.second-part');
-    let valueDisplays = document.querySelectorAll(".number");
-    let interval = 4000;
-    valueDisplays.forEach((valueDisplay) => {
-        let startValue = 0;
-        let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-        let duration = Math.floor(interval / endValue);
-        let counter = setInterval(function () {
-            startValue += 1;
-            valueDisplay.textContent = startValue;
-            if (startValue == endValue) {
-                clearInterval(counter);
-            }
-        }, duration);
-    });
+    if (!scriptExecuted) {
+        const target = document.querySelector('.second-part');
+        let valueDisplays = document.querySelectorAll(".number");
+        let interval = 2000;
+        valueDisplays.forEach((valueDisplay) => {
+            let startValue = 0;
+            let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+            let duration = Math.floor(interval / endValue);
+            let counter = setInterval(function () {
+                startValue += 1;
+                valueDisplay.textContent = startValue;
+                if (startValue == endValue) {
+                    clearInterval(counter);
+                }
+            }, duration);
+        });
+        scriptExecuted = true; // Set the flag to true after executing once
+        window.removeEventListener('scroll', handleScroll); // Remove the event listener
+    }
 }
-
 
 // Add event listener for scroll event
 window.addEventListener('scroll', handleScroll);
