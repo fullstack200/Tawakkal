@@ -8,6 +8,8 @@ Welcome to the Tawakkal Ventures website! This platform showcases the real estat
 - **Core Values:** Display the core values that drive Tawakkal Ventures
 - **Business Process:** Outline how Tawakkal Ventures starts and completes projects, providing transparency to clients
 - **Services Offered:** Information on the types of real estate services provided by the business
+- **Contact Information:** Display contact details for customer inquiries
+- **Customer Inquiry Forms:** Allow customers to reach out with queries through contact forms
 
 ## Technologies Used
 - **Frontend:**
